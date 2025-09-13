@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CV — José Manuel Hernández Alejo</title>
+  <style>
+    :root{--max:880px;--fg:#0f172a;--muted:#475569;--bg:#fff;--chip:#f1f5f9;--line:#e2e8f0}
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+    header,section{max-width:var(--max);margin:auto;padding:24px}
+    header{display:flex;gap:16px;align-items:center;border-bottom:1px solid var(--line);position:relative}
+    img.avatar{width:84px;height:84px;border-radius:50%;object-fit:cover}
+    h1{margin:0 0 4px 0;font-size:28px} .subtitle{color:var(--muted);margin:0}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .chip{background:var(--chip);padding:6px 10px;border-radius:999px;font-size:14px}
+    h2{font-size:18px;margin:24px 0 8px}
+    .card{border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
+    .meta{color:var(--muted);font-size:14px}
+    a{color:#2563eb;text-decoration:none} a:hover{text-decoration:underline}
+    footer{max-width:var(--max);margin:24px auto 48px;padding:0 24px;color:var(--muted);font-size:14px;text-align:center}
+    @media (max-width:640px){header{flex-direction:column;align-items:flex-start}}
+
+    /* Botón imprimir */
+    #printBtn{
+      position:fixed;bottom:20px;right:20px;
+      background:#2563eb;color:white;
+      border:none;border-radius:50%;
+      width:56px;height:56px;
+      font-size:24px;
+      box-shadow:0 4px 6px rgba(0,0,0,0.2);
+      cursor:pointer;transition:background 0.3s;
+    }
+    #printBtn:hover{background:#1e40af}
+
+    /* Menú idiomas */
+    .lang-switch {
+      position:absolute;
+      top:16px;right:24px;
+      font-size:14px;
+    }
+    .lang-switch a {
+      margin-left:8px;
+      text-decoration:none;
+      color:#2563eb;
+      font-weight:bold;
+    }
+    .lang-switch a:hover {
+      text-decoration:underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="lang-switch">
+      🌐 <a href="/">ES</a> | <a href="/en/">EN</a>
+    </div>
+    <img class="avatar" src="https://avatars.githubusercontent.com/u/000000?v=4" alt="Foto">
+    <div>
+      <h1>José Manuel Hernández Alejo</h1>
+      <p class="subtitle">Ingeniero en Tecnologías de la Información</p>
+      <div class="row">
+        <a class="chip" href="mailto:jomaherale13@gmail.com">jomaherale13@gmail.com</a>
+        <span class="chip">2203496426</span>
+        <span class="chip">Chimalhuacán, Edo. Méx.</span>
+        <a class="chip" href="https://github.com/TU-USUARIO">GitHub</a>
+        <a class="chip" href="https://www.linkedin.com/in/TU-USUARIO/">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Perfil Profesional</h2>
+    <p>Ingeniero en TI con experiencia en <b>frameworks modernos (Laravel, Node.js, React)</b> y en modelos de <b>MVC y Microservicios</b>, garantizando resultados eficientes y de alta calidad. 
+    Con conocimientos en <b>bases de datos (MySQL, MongoDB)</b>, <b>servicios en la nube (Oracle Cloud, AWS)</b> y prácticas de <b>desarrollo ágil</b>. 
+    Competente en comunicación con clientes, levantamiento de requerimientos y resolución de problemas técnicos.</p>
+
+    <h2>Formación Académica</h2>
+    <div class="card">
+      <strong>Universidad Tecnológica de Nezahualcóyotl</strong>
+      <div class="meta">Ingeniería en Desarrollo y Gestión del Software · 2020–2024</div>
+    </div>
+
+    <h2>Experiencia Laboral</h2>
+    <div class="card">
+      <strong>Anaconda Software / Converging Works</strong>
+      <div class="meta">Practicante de Desarrollo de Software · Mayo 2022 – Sept 2024</div>
+      <ul>
+        <li>Análisis y levantamiento de requerimientos con clientes.</li>
+        <li>Análisis de datos.</li>
+        <li>Desarrollo de templates e-commerce con <b>Liquid/Shopify</b>.</li>
+        <li>Mantenimiento y desarrollo de módulos web.</li>
+        <li>Trabajo con <b>Big Data, Machine Learning y Oracle Cloud</b>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <strong>Proyectos Independientes</strong>
+      <div class="meta">Desarrollador de Proyectos Web</div>
+      <ul>
+        <li>Implementación de <b>PWA</b> y servicios en la nube con <b>Oracle Cloud</b> y <b>AWS</b>.</li>
+      </ul>
+    </div>
+
+    <h2>Tecnologías, Lenguajes y Herramientas</h2>
+    <div class="row">
+      <span class="chip">PHP</span><span class="chip">JavaScript</span><span class="chip">Java</span>
+      <span class="chip">C++</span><span class="chip">Python</span>
+      <span class="chip">Laravel</span><span class="chip">Node.js</span><span class="chip">React</span>
+      <span class="chip">Firebase</span><span class="chip">MySQL</span><span class="chip">MongoDB</span>
+      <span class="chip">Oracle Cloud</span><span class="chip">AWS</span><span class="chip">Liquid/Shopify</span>
+      <span class="chip">PWA</span><span class="chip">Big Data</span><span class="chip">Machine Learning</span>
+    </div>
+
+    <h2>Certificaciones</h2>
+    <ul>
+      <li>Oracle Cloud Basics Explorer Badge</li>
+    </ul>
+
+    <h2>Competencias y Habilidades</h2>
+    <ul>
+      <li>Trabajo en equipo y comunicación efectiva.</li>
+      <li>Aprendizaje constante y adaptación rápida.</li>
+      <li>Conocimiento en equipos de cómputo y telemática.</li>
+    </ul>
+
+    <h2>Idiomas</h2>
+    <p>Inglés – Intermedio</p>
+  </section>
+
+  <footer>
+    Última actualización: Sept 2025
+  </footer>
+
+  <!-- Botón imprimir -->
+  <button id="printBtn" onclick="window.print()">🖨️</button>
+</body>
+</html>
