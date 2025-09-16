@@ -5,9 +5,28 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>CV — José Manuel Hernández Alejo</title>
   <style>
-    :root{--max:880px;--fg:#0f172a;--muted:#475569;--bg:#fff;--chip:#f1f5f9;--line:#e2e8f0}
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg)}
-    header,section{max-width:var(--max);margin:auto;padding:24px}
+    
+    :root{
+      --max:880px;
+      --bg:#0b1020;        /* azul muy oscuro */
+      --fg:#e5e7eb;        /* texto claro */
+      --muted:#cbd5e1;     /* slate-300 */
+      --line:#334155;      /* slate-700 */
+      --chip:#111827;      /* gris muy oscuro */
+      --accent:#60a5fa;    /* sky-400 */
+      --accent-hover:#38bdf8; /* sky-300 */
+    }
+    *{
+      box-sizing:border-box
+    } 
+    body{
+      margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg)
+    }
+    header,section{
+      max-width:var(--max);
+      margin:auto;
+      padding:24px
+    }
     header{display:flex;gap:16px;align-items:center;border-bottom:1px solid var(--line);position:relative}
     img.avatar{width:84px;height:84px;border-radius:50%;object-fit:cover}
     h1{margin:0 0 4px 0;font-size:28px} .subtitle{color:var(--muted);margin:0}
@@ -16,9 +35,21 @@
     h2{font-size:18px;margin:24px 0 8px}
     .card{border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
     .meta{color:var(--muted);font-size:14px}
-    a{color:#2563eb;text-decoration:none} a:hover{text-decoration:underline}
+    a{color:var(--accent)} a:hover{color:var(--accent-hover)}
     footer{max-width:var(--max);margin:24px auto 48px;padding:0 24px;color:var(--muted);font-size:14px;text-align:center}
     @media (max-width:640px){header{flex-direction:column;align-items:flex-start}}
+
+
+
+    #CuerpoCV{
+  border: 2px solid var(--line);  /* antes: black */
+  max-width: 800px;
+  margin: 0 auto 50px;
+  background:#111827;             /* tarjeta oscura a juego */
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  padding: 16px;
+}
+
 
     /* Botón imprimir */
     #printBtn{
@@ -31,6 +62,19 @@
       cursor:pointer;transition:background 0.3s;
     }
     #printBtn:hover{background:#1e40af}
+
+    #TextAcompañadoBtn{
+      position:fixed;bottom:30px;right:80px;
+      background:#0e1014;color:white;
+      border:none;border-radius:10%;
+      width:auto;height:30px;
+      font-size:14px;
+      padding-top:5px;
+      padding-left: 5px;
+      padding-right: 5px;
+      box-shadow:0 4px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
 
     /* Menú idiomas */
     .lang-switch {
@@ -47,14 +91,54 @@
     .lang-switch a:hover {
       text-decoration:underline;
     }
+
+
+    @media print {
+  /* Usa los mismos colores del tema */
+  body{
+    background: var(--bg) !important;
+    color: var(--fg) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Oculta elementos de pantalla */
+  #printBtn, #TextAcompañadoBtn, .lang-switch{
+    display: none !important;
+  }
+
+  /* Bordes y enlaces con tu paleta */
+  header, .card, #CuerpoCV{
+    border-color: var(--line) !important;
+  }
+  a{
+    color: var(--accent) !important;
+    text-decoration: none !important;
+  }
+
+  /* Chips iguales que en pantalla */
+  .chip{
+    background: var(--chip) !important;
+    color: var(--fg) !important;
+    border: 1px solid var(--line) !important;
+  }
+
+  /* Página A4 y respirito */
+  @page{ size:A4; margin:14mm; }
+  .card, h2, header{ break-inside:avoid; page-break-inside:avoid; }
+}
+
   </style>
 </head>
 <body>
+
+  <div id="CuerpoCV">
+
   <header>
     <div class="lang-switch">
       🌐 <a href="/CV-Alejo">ES</a> | <a href="/CV-Alejo/en/">EN</a>
     </div>
-    <img class="avatar" src="https://avatars.githubusercontent.com/u/000000?v=4" alt="Foto">
+    <img class="avatar" src="/img/foto.jpg" alt="Foto">
     <div>
       <h1>José Manuel Hernández Alejo</h1>
       <p class="subtitle">Ingeniero en Tecnologías de la Información</p>
@@ -63,7 +147,7 @@
         <span class="chip">2203496426</span>
         <span class="chip">Chimalhuacán, Edo. Méx.</span>
         <a class="chip" href="https://github.com/TU-USUARIO">GitHub</a>
-        <a class="chip" href="https://www.linkedin.com/in/TU-USUARIO/">LinkedIn</a>
+        <a class="chip" href="www.linkedin.com/in/jose-manuel-hernandez-alejo-72145936b">LinkedIn</a>
       </div>
     </div>
   </header>
@@ -77,19 +161,24 @@
     <h2>Formación Académica</h2>
     <div class="card">
       <strong>Universidad Tecnológica de Nezahualcóyotl</strong>
-      <div class="meta">Ingeniería en Desarrollo y Gestión del Software · 2020–2024</div>
+      <div class="meta">Ingeniería en Desarrollo y Gestión del Software · 2020–2024 (Titulo en tramite)</div>
     </div>
 
     <h2>Experiencia Laboral</h2>
     <div class="card">
-      <strong>Anaconda Software / Converging Works</strong>
-      <div class="meta">Practicante de Desarrollo de Software · Mayo 2022 – Sept 2024</div>
+      <strong>Anaconda Software</strong>
+      <div class="meta">Practicante de Desarrollo de Software · Mayo 2022 – Sept 2022</div>
+      <ul>
+        <li>Análisis y levantamiento de requerimientos con clientes.</li>
+        <li>Mantenimiento y desarrollo de módulos web.</li>
+      </ul>
+      <strong>Converging Works</strong>
+      <div class="meta">Practicante de Desarrollo de Software · Mayo 2024 – Sept 2024</div>
       <ul>
         <li>Análisis y levantamiento de requerimientos con clientes.</li>
         <li>Análisis de datos.</li>
         <li>Desarrollo de templates e-commerce con <b>Liquid/Shopify</b>.</li>
-        <li>Mantenimiento y desarrollo de módulos web.</li>
-        <li>Trabajo con <b>Big Data, Machine Learning y Oracle Cloud</b>.</li>
+        <li>Desarrollo de módulos web.</li>
       </ul>
     </div>
     <!--<div class="card">
@@ -132,5 +221,8 @@
 
   <!-- Botón imprimir -->
   <button id="printBtn" onclick="window.print()">🖨️</button>
+  <div id="TextAcompañadoBtn">Guardar/imprimir</div>
+
+  </div>
 </body>
 </html>
