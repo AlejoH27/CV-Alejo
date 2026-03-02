@@ -96,37 +96,41 @@
 
     @media print {
   /* Usa los mismos colores del tema */
-  body{
-    background: var(--bg) !important;
-    color: var(--fg) !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
+  /* Página exactamente 216mm x 355mm (Oficio B-ish) */
+@page {
+  size: 216mm 355mm; /* ancho alto */
+  margin: 14mm;      /* ajusta aquí tu margen */
+}
 
-  /* Oculta elementos de pantalla */
+/* Oculta elementos de pantalla */
   #printBtn, #TextAcompañadoBtn, .lang-switch{
     display: none !important;
   }
 
-  /* Bordes y enlaces con tu paleta */
-  header, .card, #CuerpoCV{
-    border-color: var(--line) !important;
-  }
-  a{
-    color: var(--accent) !important;
-    text-decoration: none !important;
-  }
+/* Asegura que tu "page" HTML coincida con el tamaño físico */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact; /* conservar colores de fondo */
+  print-color-adjust: exact;
+  box-sizing: border-box;
+}
 
-  /* Chips iguales que en pantalla */
-  .chip{
-    background: var(--chip) !important;
-    color: var(--fg) !important;
-    border: 1px solid var(--line) !important;
-  }
+/* contenedor que representará cada página */
+.page {
+  width: 216mm;
+  height: 355mm;
+  box-sizing: border-box;
+  padding: 14mm;      /* si usas margen desde @page, puedes usar padding aquí también */
+  background: #0f1720; /* ejemplo */
+}
 
-  /* Página A4 y respirito */
-  @page{ size:A4; margin:14mm; }
-  .card, h2, header{ break-inside:avoid; page-break-inside:avoid; }
+/* evitar que elementos se rompan mal */
+.card, h2, header {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
 }
 
   </style>
@@ -217,7 +221,7 @@
       <span class="chip">Firebase</span><span class="chip">MySQL</span><span class="chip">MongoDB</span>
       <span class="chip">Oracle Cloud</span><span class="chip">AWS</span><span class="chip">Liquid/Shopify</span>
       <span class="chip">PWA</span><span class="chip">Big Data</span><span class="chip">Machine Learning</span>
-      <span class="chip">Django</span>
+      <span class="chip">Django</span><span class="chip">Cors</span>
     </div>
 
     <h2>Certificaciones</h2>
@@ -234,7 +238,7 @@
     </ul>
 
     <h2>Idiomas</h2>
-    <p>Inglés – Intermedio</p>
+    <p>Inglés – Intermedio (lectura y escritura)</p>
   </section>
 
   <footer>
