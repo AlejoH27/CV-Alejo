@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,238 +5,533 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Resume — José Manuel Hernández Alejo</title>
   <style>
-     :root{
-      --max:880px;
-      --bg:#0b1020;        /* azul muy oscuro */
-      --fg:#e5e7eb;        /* texto claro */
-      --muted:#cbd5e1;     /* slate-300 */
-      --line:#334155;      /* slate-700 */
-      --chip:#111827;      /* gris muy oscuro */
-      --accent:#60a5fa;    /* sky-400 */
-      --accent-hover:#38bdf8; /* sky-300 */
-    }
-    *{
-      box-sizing:border-box
-    } 
-    body{
-      margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg)
-    }
-    header,section{
-      max-width:var(--max);
-      margin:auto;
-      padding:24px
-    }
-    header{display:flex;gap:16px;align-items:center;border-bottom:1px solid var(--line);position:relative}
-    img.avatar{width:84px;height:84px;border-radius:50%;object-fit:cover}
-    h1{margin:0 0 4px 0;font-size:28px} .subtitle{color:var(--muted);margin:0}
-    .row{display:flex;gap:16px;flex-wrap:wrap}
-    .chip{background:var(--chip);padding:6px 10px;border-radius:999px;font-size:14px}
-    h2{font-size:18px;margin:24px 0 8px}
-    .card{border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
-    .meta{color:var(--muted);font-size:14px}
-    a{color:var(--accent)} a:hover{color:var(--accent-hover)}
-    footer{max-width:var(--max);margin:24px auto 48px;padding:0 24px;color:var(--muted);font-size:14px;text-align:center}
-    @media (max-width:640px){header{flex-direction:column;align-items:flex-start}}
-
-
-
-    #CuerpoCV{
-  border: 2px solid var(--line);  /* antes: black */
-  max-width: 800px;
-  margin: 0 auto 50px;
-  background:#111827;             /* tarjeta oscura a juego */
-  box-shadow: 0 8px 24px rgba(0,0,0,.25);
-  padding: 16px;
-}
-
-
-    /* Botón imprimir */
-    #printBtn{
-      position:fixed;bottom:20px;right:20px;
-      background:#2563eb;color:white;
-      border:none;border-radius:50%;
-      width:56px;height:56px;
-      font-size:24px;
-      box-shadow:0 4px 6px rgba(0,0,0,0.2);
-      cursor:pointer;transition:background 0.3s;
-    }
-    #printBtn:hover{background:#1e40af}
-
-    #TextAcompañadoBtn{
-      position:fixed;bottom:30px;right:80px;
-      background:#0e1014;color:white;
-      border:none;border-radius:10%;
-      width:auto;height:30px;
-      font-size:14px;
-      padding-top:5px;
-      padding-left: 5px;
-      padding-right: 5px;
-      box-shadow:0 4px 6px rgba(0,0,0,0.2);
-      cursor: pointer;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Menú idiomas */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.3;
+      color: #1a1a1a;
+      background: #ffffff;
+      padding: 12px 12px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #d0d0d0;
+      position: relative;
+    }
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      margin-top: 0;
+    }
+
+    .header-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 2px;
+      color: #000;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      font-size: 11px;
+      line-height: 1.3;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      white-space: nowrap;
+    }
+
+    .contact-item::after {
+      content: " | ";
+      color: #999;
+      margin: 0 6px;
+    }
+
+    .contact-item:last-child::after {
+      content: "";
+      margin: 0;
+    }
+
+    .contact a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
     .lang-switch {
-      position:absolute;
-      top:16px;right:24px;
-      font-size:14px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 13px;
+      display: none;
     }
+
     .lang-switch a {
-      margin-left:8px;
-      text-decoration:none;
-      color:#2563eb;
-      font-weight:bold;
-    }
-    .lang-switch a:hover {
-      text-decoration:underline;
+      color: #0066cc;
+      text-decoration: none;
+      margin-left: 8px;
     }
 
+    /* Sections */
+    section {
+      margin-bottom: 10px;
+    }
 
+    h2 {
+      font-size: 12px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 6px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #d0d0d0;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 1.4;
+      color: #1a1a1a;
+      margin-bottom: 0;
+    }
+
+    /* Cards/Boxes */
+    .card {
+      background: #f5f5f5;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: #000;
+      margin-bottom: 3px;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .card li {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+      padding-left: 0;
+    }
+
+    .card li::before {
+      content: "•";
+      margin-right: 6px;
+      color: #999;
+    }
+
+    /* Chips/Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f0f0f0;
+      border: 1px solid #d0d0d0;
+      padding: 4px 8px;
+      border-radius: 3px;
+      font-size: 12px;
+      color: #1a1a1a;
+    }
+
+    /* List styles */
+    section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    section > ul > li {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+      padding-left: 0;
+    }
+
+    section > ul > li::before {
+      content: "•";
+      margin-right: 8px;
+      color: #999;
+    }
+
+    /* Education card special */
+    .education-card {
+      background: #f5f5f5;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+
+    .education-title {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: #000;
+      margin-bottom: 3px;
+    }
+
+    .education-meta {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: #999;
+      margin-top: 30px;
+      padding-top: 14px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* Buttons */
+    #printBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #printBtn:hover {
+      background: #0056b3;
+    }
+
+    #TextAcompañadoBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 80px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 12px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      display: none;
+    }
+
+    /* Print styles */
     @media print {
-  /* Usa los mismos colores del tema */
-  body{
-    background: var(--bg) !important;
-    color: var(--fg) !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
+      body {
+        padding: 0.2in 0.2in;
+        background: white;
+        font-size: 10px;
+        line-height: 1.2;
+      }
 
-  /* Oculta elementos de pantalla */
-  #printBtn, #TextAcompañadoBtn, .lang-switch{
-    display: none !important;
-  }
+      #printBtn, #TextAcompañadoBtn, .lang-switch {
+        display: none !important;
+      }
 
-  /* Bordes y enlaces con tu paleta */
-  header, .card, #CuerpoCV{
-    border-color: var(--line) !important;
-  }
-  a{
-    color: var(--accent) !important;
-    text-decoration: none !important;
-  }
+      .container {
+        max-width: 100%;
+        margin: 0;
+      }
 
-  /* Chips iguales que en pantalla */
-  .chip{
-    background: var(--chip) !important;
-    color: var(--fg) !important;
-    border: 1px solid var(--line) !important;
-  }
+      @page {
+        size: letter;
+        margin: 0.2in;
+      }
 
-  /* Página A4 y respirito */
-  @page{ size:A4; margin:14mm; }
-  .card, h2, header{ break-inside:avoid; page-break-inside:avoid; }
-}
+      header {
+        margin-bottom: 6px;
+        padding-bottom: 4px;
+        gap: 8px;
+        page-break-after: avoid;
+      }
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+
+      .subtitle {
+        font-size: 9px;
+        margin-bottom: 2px;
+      }
+
+      .contact {
+        font-size: 9px;
+      }
+
+      h2 {
+        font-size: 11px;
+        margin-bottom: 3px;
+        padding-bottom: 2px;
+      }
+
+      p {
+        font-size: 10px;
+        line-height: 1.2;
+      }
+
+      section {
+        margin-bottom: 6px;
+        page-break-inside: avoid;
+      }
+
+      .card {
+        padding: 6px 8px;
+        margin-bottom: 4px;
+        page-break-inside: avoid;
+      }
+
+      .card-title {
+        font-size: 10px;
+        margin-bottom: 0;
+      }
+
+      .card-meta {
+        font-size: 9px;
+        margin-bottom: 2px;
+      }
+
+      .card li {
+        font-size: 10px;
+        margin-bottom: 1px;
+        line-height: 1.2;
+      }
+
+      .tag {
+        font-size: 9px;
+        padding: 2px 4px;
+      }
+
+      footer {
+        font-size: 8px;
+        margin-top: 6px;
+        padding-top: 4px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .contact {
+        justify-content: center;
+      }
+
+      .lang-switch {
+        position: static;
+        margin-bottom: 15px;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <div id="CuerpoCV">
-
-  <header>
+  <div class="container">
     <div class="lang-switch">
       🌐 <a href="/CV-Alejo">ES</a> | <a href="/CV-Alejo/en/">EN</a>
     </div>
-    <img class="avatar" src="../img/foto.jpg" alt="Photo">
-    <div>
-      <h1>José Manuel Hernández Alejo</h1>
-      <p class="subtitle">Information Technology Engineer</p>
-      <div class="row">
-        <a class="chip" href="mailto:jomaherale13@gmail.com">jomaherale13@gmail.com</a>
-        <span class="chip">+52 2203496426</span>
-        <span class="chip">Chimalhuacán, Mexico</span>
-        <a class="chip" href="https://github.com/TU-USUARIO">GitHub</a>
-        <a class="chip" href="www.linkedin.com/in/jose-manuel-hernandez-alejo-72145936b">LinkedIn</a>
+
+    <header>
+      <img class="avatar" src="../img/Foto_de_perfil.png" alt="José Manuel Hernández Alejo">
+      <div class="header-content">
+        <h1>José Manuel Hernández Alejo</h1>
+        <p class="subtitle">Information Technology Engineer</p>
+        <div class="contact">
+          <div class="contact-item">
+            <a href="mailto:jomaherale13@gmail.com">jomaherale13@gmail.com</a>
+          </div>
+          <div class="contact-item">+52 5537942317</div>
+          <div class="contact-item">Chimalhuacán, Mexico</div>
+          <div class="contact-item">
+            <a href="https://github.com/jomaherale">GitHub</a>
+          </div>
+          <div class="contact-item">
+            <a href="https://www.linkedin.com/in/jose-manuel-hernandez-alejo-72145936b">LinkedIn</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <section>
-    <h2>Professional Profile</h2>
-    <p>
-  Software Development and Management Engineer with experience in <b>web development</b>, <b>systems support</b>, and <b>incident management in production environments</b>.
-  I have collaborated in <b>software testing</b>, <b>incident tracking</b>, <b>user support</b>, and <b>cross-functional work with development and operations teams</b>, following agile methodologies such as <b>SCRUM</b>.
-  I have experience with technologies such as <b>Laravel, Node.js, React, and Django</b>, as well as knowledge of <b>MVC architecture</b>, <b>relational and non-relational databases</b>, mainly <b>PostgreSQL and MongoDB</b>, and basic knowledge of <b>Oracle Cloud</b>.
-  I am characterized by my <b>adaptability to new technologies</b>, <b>problem-solving skills</b>, and <b>efficient user support both on-site and remotely</b>.
-</p>
+    <section>
+      <h2>Professional Profile</h2>
+      <p>
+        Software Development and Management Engineer with experience in <b>web development</b>, <b>systems support</b>, and <b>incident management in production environments</b>. I have collaborated in <b>software testing</b>, <b>incident tracking</b>, <b>user support</b>, and <b>cross-functional work with development and operations teams</b>, following agile methodologies such as <b>SCRUM</b>. I have experience with technologies such as <b>Laravel, Node.js, React, and Django</b>, as well as knowledge of <b>MVC architecture, relational and non-relational databases</b>, mainly <b>PostgreSQL and MongoDB</b>, as well as <b>Machine Learning</b> for data cleaning and collection for FM. I am characterized by my <b>adaptability to new technologies</b>, <b>problem-solving skills</b>, and <b>efficient user support both on-site and remotely</b>.
+      </p>
+    </section>
 
-    <h2>Education</h2>
-    <div class="card">
-      <strong>Universidad Tecnológica de Nezahualcóyotl</strong>
-      <div class="meta">Bachelor’s Degree in Software Development and Management · 2020–2024</div>
-    </div>
+    <section>
+      <h2>Education</h2>
+      <div class="education-card">
+        <div class="education-title">Universidad Tecnológica de Nezahualcóyotl</div>
+        <div class="education-meta">Bachelor's Degree in Software Development and Management · 2020–2024</div>
+      </div>
+    </section>
 
-    <h2>Work Experience</h2>
-    <div class="card">
-      <strong>Alfonso Marina</strong>
-      <div class="meta">Systems Trainee · November 2025 – Present</div> 
-      <ul> 
-        <li>Basic support and maintenance of internal systems.</li> 
-        <li>Software testing development and execution.</li> 
-        <li>Support and assistance for company users.</li> 
-        <li>Incident monitoring and tracking.</li> 
-        <li>Collaboration with development and operations teams.</li> 
-      </ul>
+    <section>
+      <h2>Work Experience</h2>
 
-      <strong>Converging Works</strong> 
-      <div class="meta">Software Development Intern · May 2024 – Sept 2024</div> <ul> <li>Requirements analysis and gathering with clients.</li> <li>Data analysis.</li> <li>E-commerce template development using <b>Liquid/Shopify</b>.</li> <li>Web module development.</li> </ul>
+      <div class="card">
+        <div class="card-title">Alfonso Marina</div>
+        <div class="card-meta">Systems Trainee · November 2025 – Present</div>
+        <ul>
+          <li>I provide on-site and remote technical support to company users, addressing incidents related to systems, equipment and internal tools.</li>
+          <li>I perform basic preventive and corrective maintenance on computer equipment and internal systems.</li>
+          <li>I perform operations, queries and maintenance on the database system hosted in Microsoft Access, in addition to modeling tables, relationships and data structures.</li>
+          <li>I design user interfaces for systems and internal tools, considering their functionality, clarity and ease of use.</li>
+          <li>I execute functional tests and track incidents, modifications and new functionalities until their resolution or release.</li>
+          <li>I collaborate with development and operations teams in identifying and solving problems in production environments.</li>
+        </ul>
+      </div>
 
-      <strong>Anaconda Software</strong> 
-      <div class="meta">Software Development Intern · May 2022 – Sept 2022</div> <ul> <li>Requirements analysis and gathering with clients.</li> <li>Production deployment follow-up and change management.</li> <li>Maintenance and development of web modules.</li> <li>Collaboration and meetings with work teams.</li> </ul>
+      <div class="card">
+        <div class="card-title">Converging Works</div>
+        <div class="card-meta">Software Development Intern · May 2024 – September 2024</div>
+        <ul>
+          <li>I participated in analysis and requirements gathering with clients.</li>
+          <li>I analyzed information to support the definition and development of digital solutions.</li>
+          <li>I developed and customized e-commerce templates using Liquid and Shopify.</li>
+          <li>I collaborated in the development, maintenance and improvement of web modules.</li>
+        </ul>
+      </div>
 
-    </div>
+      <div class="card">
+        <div class="card-title">Anaconda Software</div>
+        <div class="card-meta">Software Development Intern · May 2022 – September 2022</div>
+        <ul>
+          <li>I participated in analysis and requirements gathering with clients.</li>
+          <li>I followed up on deliverables, requested changes and releases to production environments.</li>
+          <li>I collaborated in the maintenance and development of modules for web applications.</li>
+          <li>I participated in follow-up meetings and coordination with work teams.</li>
+        </ul>
+      </div>
+    </section>
 
-    <!--<div class="card">
-      <strong>Independent Projects</strong>
-      <div class="meta">Web Projects Developer</div>
+    <section>
+      <h2>Technologies, Languages & Tools</h2>
+      <div class="tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">PHP</span>
+        <span class="tag">Python</span>
+        <span class="tag">Java</span>
+        <span class="tag">C++</span>
+        <span class="tag">Laravel</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">React</span>
+        <span class="tag">Django</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Shopify / Liquid</span>
+        <span class="tag">Firebase</span>
+        <span class="tag">SCRUM</span>
+        <span class="tag">GitHub</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
       <ul>
-        <li>Implemented <b>PWA (Progressive Web Apps)</b> and cloud-based solutions with <b>Oracle Cloud</b> and <b>AWS</b>.</li>
+        <li>(AWS) Fundamentals of Machine Learning and Artificial Intelligence.</li>
       </ul>
-    </div>-->
+    </section>
 
-    <h2>Technologies, Languages & Tools</h2>
-    <div class="row">
-  <span class="chip">JavaScript</span>
-  <span class="chip">PHP</span>
-  <span class="chip">Python</span>
-  <span class="chip">Java</span>
-  <span class="chip">C++</span>
-  <span class="chip">Laravel</span>
-  <span class="chip">Node.js</span>
-  <span class="chip">React</span>
-  <span class="chip">Django</span>
-  <span class="chip">PostgreSQL</span>
-  <span class="chip">MongoDB</span>
-  <span class="chip">Oracle Cloud</span>
-  <span class="chip">AWS</span>
-  <span class="chip">Shopify / Liquid</span>
-  <span class="chip">Firebase</span>
-  <span class="chip">SCRUM</span>
-  <span class="chip">GitHub</span>
-</div>
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>Teamwork and effective communication.</li>
+        <li>Continuous learning and quick adaptation.</li>
+        <li>Knowledge of computer hardware and telematics.</li>
+        <li>Working under pressure to meet established deadlines.</li>
+      </ul>
+    </section>
 
-    <h2>Certifications</h2>
-    <ul>
-      <li>Oracle Cloud Basics Explorer Badge</li>
-    </ul>
+    <section>
+      <h2>Languages</h2>
+      <p>English — Intermediate, with reading and writing ability. / Spanish - Native</p>
+    </section>
 
-    <h2>Skills</h2>
-    <ul>
-      <li>Teamwork and effective communication.</li>
-      <li>Continuous learning and quick adaptation.</li>
-      <li>Knowledge of computer hardware and telematics.</li>
-    </ul>
-
-    <h2>Languages</h2>
-    <p>English — Intermediate</p>
-  </section>
-
+    <footer>
+      Last updated: August 2026
+    </footer>
   </div>
 
-  <footer>
-    Last updated: Sept 2025
-  </footer>
-
   <button id="printBtn" onclick="window.print()">🖨️</button>
-  <div id="TextAcompañadoBtn">Guardar/imprimir</div>
+  <div id="TextAcompañadoBtn">Save/Print</div>
 </body>
 </html>
