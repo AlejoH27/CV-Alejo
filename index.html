@@ -11,72 +11,59 @@
       padding: 0;
     }
 
+    :root {
+      --accent: #1f5c8b;
+      --text: #1a1a1a;
+      --muted: #444;
+      --rule: #1f5c8b;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 12px;
-      line-height: 1.3;
-      color: #1a1a1a;
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--text);
       background: #ffffff;
-      padding: 12px 12px;
+      padding: 28px 16px;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 850px;
       margin: 0 auto;
     }
 
     /* Header */
     header {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-bottom: 18px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #d0d0d0;
+      margin-bottom: 14px;
       position: relative;
     }
 
-    .avatar {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      margin-top: 0;
-    }
-
-    .header-content {
-      flex: 1;
-      min-width: 0;
-    }
-
     h1 {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
-      margin-bottom: 2px;
-      color: #000;
-      line-height: 1.1;
+      margin-bottom: 4px;
+      color: var(--accent);
+      line-height: 1.15;
     }
 
     .subtitle {
-      font-size: 12px;
-      color: #666;
+      font-size: 13px;
+      color: var(--muted);
       margin-bottom: 6px;
-      font-weight: 500;
+      font-weight: 400;
     }
 
     .contact {
       display: flex;
       flex-wrap: wrap;
-      gap: 0;
-      font-size: 11px;
-      line-height: 1.3;
+      font-size: 12.5px;
+      line-height: 1.4;
+      color: var(--text);
     }
 
     .contact-item {
       display: inline-flex;
       align-items: center;
-      gap: 0;
       white-space: nowrap;
     }
 
@@ -92,7 +79,7 @@
     }
 
     .contact a {
-      color: #0066cc;
+      color: var(--accent);
       text-decoration: none;
     }
 
@@ -109,140 +96,155 @@
     }
 
     .lang-switch a {
-      color: #0066cc;
+      color: var(--accent);
       text-decoration: none;
       margin-left: 8px;
     }
 
     /* Sections */
     section {
-      margin-bottom: 10px;
+      margin-bottom: 16px;
     }
 
     h2 {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
-      color: #000;
-      margin-bottom: 6px;
-      padding-bottom: 3px;
-      border-bottom: 1px solid #d0d0d0;
+      letter-spacing: 0.3px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--rule);
     }
 
     p {
-      font-size: 12px;
-      line-height: 1.4;
-      color: #1a1a1a;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text);
       margin-bottom: 0;
     }
 
-    /* Cards/Boxes */
-    .card {
-      background: #f5f5f5;
-      border: 1px solid #d0d0d0;
-      border-radius: 4px;
-      padding: 12px 14px;
-      margin-bottom: 10px;
+    /* Experience entries */
+    .job {
+      margin-bottom: 12px;
     }
 
-    .card-title {
-      font-weight: 700;
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      margin-bottom: 2px;
+    }
+
+    .job-title {
       font-size: 13.5px;
-      color: #000;
-      margin-bottom: 3px;
+      color: var(--text);
     }
 
-    .card-meta {
-      font-size: 12px;
-      color: #666;
-      margin-bottom: 8px;
+    .job-title .company {
+      font-weight: 700;
     }
 
-    .card ul {
+    .job-title .role {
+      font-style: italic;
+    }
+
+    .job-dates {
+      font-size: 12.5px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .job ul {
       list-style: none;
-      margin: 0;
+      margin: 4px 0 0;
       padding: 0;
     }
 
-    .card li {
+    .job li {
       font-size: 13px;
       line-height: 1.5;
-      color: #1a1a1a;
-      margin-bottom: 4px;
-      padding-left: 0;
+      color: var(--text);
+      margin-bottom: 2px;
+      padding-left: 14px;
+      position: relative;
     }
 
-    .card li::before {
+    .job li::before {
       content: "•";
-      margin-right: 6px;
-      color: #999;
+      position: absolute;
+      left: 0;
+      color: var(--muted);
     }
 
-    /* Chips/Tags */
-    .tags {
+    /* Education */
+    .edu-row {
       display: flex;
+      justify-content: space-between;
+      align-items: baseline;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
+      gap: 4px 12px;
+      margin-bottom: 2px;
     }
 
-    .tag {
-      display: inline-block;
-      background: #f0f0f0;
-      border: 1px solid #d0d0d0;
-      padding: 4px 8px;
-      border-radius: 3px;
-      font-size: 12px;
-      color: #1a1a1a;
+    .edu-title {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: var(--text);
     }
 
-    /* List styles */
-    section ul {
+    .edu-dates {
+      font-size: 12.5px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .edu-meta {
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    /* Plain lists (certifications, competencias) */
+    section > ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
 
     section > ul > li {
-      font-size: 11px;
-      line-height: 1.3;
-      color: #1a1a1a;
-      margin-bottom: 2px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text);
+      margin-bottom: 3px;
+      padding-left: 14px;
+      position: relative;
     }
 
     section > ul > li::before {
       content: "•";
-      margin-right: 4px;
-      color: #999;
+      position: absolute;
+      left: 0;
+      color: var(--muted);
     }
 
-    /* Education card special */
-    .education-card {
-      background: #f5f5f5;
-      border: 1px solid #d0d0d0;
-      border-radius: 4px;
-      padding: 8px 10px;
-      margin-bottom: 6px;
-    }
-
-    .education-title {
-      font-weight: 700;
-      font-size: 12px;
-      color: #000;
-      margin-bottom: 1px;
-    }
-
-    .education-meta {
-      font-size: 10px;
-      color: #666;
+    /* Tech list rows */
+    .tech-row {
+      margin-bottom: 3px;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      font-size: 9px;
+      font-size: 10px;
       color: #999;
-      margin-top: 12px;
-      padding-top: 8px;
+      margin-top: 18px;
+      padding-top: 10px;
       border-top: 1px solid #e0e0e0;
     }
 
@@ -251,7 +253,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #007bff;
+      background: var(--accent);
       color: white;
       border: none;
       border-radius: 50%;
@@ -267,7 +269,7 @@
     }
 
     #printBtn:hover {
-      background: #0056b3;
+      background: #163f5f;
     }
 
     #TextAcompañadoBtn {
@@ -287,10 +289,10 @@
 
     @media print {
       body {
-        padding: 0.2in 0.2in;
+        padding: 0.35in;
         background: white;
-        font-size: 10px;
-        line-height: 1.2;
+        font-size: 11px;
+        line-height: 1.3;
       }
 
       #printBtn, #TextAcompañadoBtn, .lang-switch {
@@ -304,93 +306,58 @@
 
       @page {
         size: letter;
-        margin: 0.2in;
+        margin: 0.4in;
       }
 
       header {
-        margin-bottom: 6px;
-        padding-bottom: 4px;
-        gap: 8px;
-      }
-
-      .avatar {
-        width: 50px;
-        height: 50px;
+        margin-bottom: 8px;
       }
 
       h1 {
-        font-size: 16px;
-        margin-bottom: 0;
+        font-size: 19px;
       }
 
       .subtitle {
-        font-size: 9px;
+        font-size: 10px;
         margin-bottom: 2px;
       }
 
       .contact {
-        font-size: 9px;
+        font-size: 10px;
       }
 
       h2 {
-        font-size: 11px;
-        margin-bottom: 3px;
+        font-size: 11.5px;
+        margin-bottom: 4px;
         padding-bottom: 2px;
       }
 
-      p {
-        font-size: 10px;
-        line-height: 1.2;
+      p, .job li, section > ul > li, .edu-meta {
+        font-size: 10.5px;
+        line-height: 1.3;
       }
 
       section {
+        margin-bottom: 8px;
+        page-break-inside: avoid;
+      }
+
+      .job {
         margin-bottom: 6px;
         page-break-inside: avoid;
       }
 
-      .card {
-        padding: 6px 8px;
-        margin-bottom: 4px;
-        page-break-inside: avoid;
-      }
-
-      .card-title {
-        font-size: 10px;
-        margin-bottom: 0;
-      }
-
-      .card-meta {
-        font-size: 9px;
-        margin-bottom: 2px;
-      }
-
-      .card li {
-        font-size: 10px;
-        margin-bottom: 1px;
-        line-height: 1.2;
-      }
-
-      .tag {
-        font-size: 9px;
-        padding: 2px 4px;
-      }
-
       footer {
         font-size: 8px;
-        margin-top: 6px;
+        margin-top: 8px;
         padding-top: 4px;
       }
     }
 
     @media (max-width: 640px) {
-      header {
+      .job-row, .edu-row {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .contact {
-        justify-content: center;
+        gap: 0;
       }
 
       .lang-switch {
@@ -406,25 +373,20 @@
       🌐 <a href="/CV-Alejo">ES</a> | <a href="/CV-Alejo/en/">EN</a>
     </div>
 
-
-
     <header>
-      <img class="avatar" src="./img/Foto_de_perfil.png" alt="José Manuel Hernández Alejo">
-      <div class="header-content">
-        <h1>José Manuel Hernández Alejo</h1>
-        <p class="subtitle">Ingeniero en Tecnologías de la Información</p>
-        <div class="contact">
-          <div class="contact-item">
-            <a href="mailto:jomaherale13@gmail.com">jomaherale13@gmail.com</a>
-          </div>
-          <div class="contact-item">55 37942317</div>
-          <div class="contact-item">Chimalhuacán, Estado de México</div>
-          <div class="contact-item">
-            <a href="https://github.com/jomaherale">GitHub</a>
-          </div>
-          <div class="contact-item">
-            <a href="https://www.linkedin.com/in/jose-manuel-hernandez-alejo-72145936b">LinkedIn</a>
-          </div>
+      <h1>José Manuel Hernández Alejo</h1>
+      <p class="subtitle">Desarrollador Junior · Full-Stack (JavaScript / PHP / Python)</p>
+      <div class="contact">
+        <div class="contact-item">
+          <a href="mailto:jomaherale13@gmail.com">jomaherale13@gmail.com</a>
+        </div>
+        <div class="contact-item">55 3794 2317</div>
+        <div class="contact-item">Chimalhuacán, Estado de México</div>
+        <div class="contact-item">
+          <a href="https://github.com/jomaherale">GitHub</a>
+        </div>
+        <div class="contact-item">
+          <a href="https://www.linkedin.com/in/jose-manuel-hernandez-alejo-72145936b">LinkedIn</a>
         </div>
       </div>
     </header>
@@ -432,101 +394,101 @@
     <section>
       <h2>Perfil profesional</h2>
       <p>
-        Ingeniero en Desarrollo y Gestión del Software con experiencia en <b>desarrollo web</b>, <b>soporte a sistemas</b> y <b>atención de incidencias en entornos productivos</b>. He colaborado en <b>pruebas de software</b>, <b>seguimiento de incidencias</b>, <b>soporte a usuarios</b> y <b>trabajo conjunto con equipos de desarrollo y operación</b>, bajo metodologías ágiles como <b>SCRUM</b>. Cuento con experiencia en tecnologías como <b>Laravel, Node.js, React y Django</b>, además de conocimientos en <b>arquitectura MVC, bases de datos relacionales y no relacionales</b>, principalmente <b>PostgreSQL y MongoDB</b>, así como nociones de <b>Machine Learning</b> para la limpieza y recolección de datos para FM. Me caracterizo por mi <b>adaptación a nuevas tecnologías</b>, la <b>resolución de problemas</b> y la <b>atención eficiente a usuarios de forma presencial y remota</b>.
+        Ingeniero en desarrollo de softwware con 2 años de experiencia en desarrollo web y trabajo en equipos ágiles (SCRUM, Kanban). con enfoque Fullstack y consultor en levantamiento de requerimientos con clientes, desarrollo y mantenimiento de módulos web utilizando arquitecturas MVC, Microservicios y Capas. Diseñador de base de datos Relacionales y no relacionales y modelado de datos. Cuento con conocimientos en estructuras de datos. Me estoy especializando en Machine Learnign para aplicaciones de IA con modelos NLP(Natural lenguage processing) y Deep learning.
       </p>
-    </section>
-
-    <section>
-      <h2>Formación académica</h2>
-      <div class="education-card">
-        <div class="education-title">Universidad Tecnológica de Nezahualcóyotl</div>
-        <div class="education-meta">Ingeniería en Desarrollo y Gestión del Software · 2020–2024 · Título en trámite</div>
-      </div>
     </section>
 
     <section>
       <h2>Experiencia laboral</h2>
 
-      <div class="card">
-        <div class="card-title">Alfonso Marina</div>
-        <div class="card-meta">Trainee de Sistemas · Noviembre 2025 – Actualidad</div>
+      <div class="job">
+        <div class="job-row">
+          <div class="job-title"><span class="company">Alfonso Marina</span> — <span class="role">Programador Analista</span></div>
+          <div class="job-dates">Noviembre 2025 – Actualidad</div>
+        </div>
         <ul>
-          <li>Brindo soporte técnico presencial y remoto a los usuarios de la empresa, atendiendo incidencias relacionadas con sistemas, equipos y herramientas internas.</li>
-          <li>Realizo mantenimiento preventivo y correctivo básico a equipos de cómputo y sistemas internos.</li>
-          <li>Realizo operaciones, consultas y mantenimiento al sistema de bases de datos alojado en Microsoft Access, además del modelado de tablas, relaciones y estructuras de datos.</li>
-          <li>Diseño interfaces de usuario para sistemas y herramientas internas, considerando su funcionalidad, claridad y facilidad de uso.</li>
-          <li>Ejecuto pruebas funcionales y doy seguimiento a incidencias, modificaciones y nuevas funcionalidades hasta su resolución o liberación.</li>
-          <li>Colaboro con los equipos de desarrollo y operación en la identificación y solución de problemas en entornos productivos.</li>
+          <li>Ejecuto pruebas de funcionalidad y doy seguimiento a incidencias derivadas de un problema causado en sus equipos de computo tanto en software como hardware.</li>
+          <li>Modelo tablas relaciones y estructuras de datos del sistema de base de datos interno en (Microsoft Access) con auditoria y VSB, incluyendo consultas y mantenimiento.</li>
+          <li>Colaboro con mi equipos de area en la identificación y solución de problemas en el entorno productivo de sistemas y redes.</li>
+          <li>Llevo procesos administrativos del área de sistemas: solicitud, pagos y propuestas de licencias de software y equipo.</li>
+          <li>Brindo soporte técnico presencial y remoto a usuarios(TeamViewer), con mantenimiento preventivo y correctivo básico a equipos y sistemas internos.</li>
+          <li>Consultor en levantamiento de requerimientos y analizar puntos de mejora dentro de los procesos de la empresa</li>
+          <li>Implemento actualmente nuevas tecnologias para el nuevo desarrollo y futuras migraciones de los sistemas con Node.js, Express, React, Django, python y Javascript, Uso postgress y dockers para el despliegue y almacenamiento de los datos</li>
         </ul>
       </div>
 
-      <div class="card">
-        <div class="card-title">Converging Works</div>
-        <div class="card-meta">Practicante de Desarrollo de Software · Mayo 2024 – Septiembre 2024</div>
+      <div class="job">
+        <div class="job-row">
+          <div class="job-title"><span class="company">Converging Works</span> — <span class="role">Desarrollador Shopify Jr - Practicas profesionales</span></div>
+          <div class="job-dates">Mayo 2024 – Septiembre 2024</div>
+        </div>
         <ul>
-          <li>Participé en el análisis y levantamiento de requerimientos con clientes.</li>
-          <li>Analicé información para apoyar la definición y desarrollo de soluciones digitales.</li>
-          <li>Desarrollé y personalicé plantillas de comercio electrónico utilizando Liquid y Shopify.</li>
-          <li>Colaboré en el desarrollo, mantenimiento y mejora de módulos web.</li>
+          <li>Desarrollé y personalicé las plantillas de e-commerce utilizando Liquid, Javascript, Typescript en Shopify.</li>
+          <li>Colaboré en el nuevo desarrollo de un modulo de Converging Works en Shopify, para tener una plantilla dimanica adaptable a cualquier giro de negocio sin depender de las plantillas genericas del sitio Shopify.</li>
+          <li>Realice el análisis y levantamiento de requerimientos con CEO de la empresa e involucrados del area de marketing y desarrollo web.</li>
+          <li>Analicé información para la definición y desarrollo de la metodologia de trabajo basada en Scrum con su respectivo Product Backlog y Sprint Planning.</li>
         </ul>
       </div>
 
-      <div class="card">
-        <div class="card-title">Anaconda Software</div>
-        <div class="card-meta">Practicante de Desarrollo de Software · Mayo 2022 – Septiembre 2022</div>
+      <div class="job">
+        <div class="job-row">
+          <div class="job-title"><span class="company">Anaconda Software</span> — <span class="role">Product Manager - Practicas profesionales</span></div>
+          <div class="job-dates">Mayo 2022 – Septiembre 2022</div>
+        </div>
         <ul>
-          <li>Participé en el análisis y levantamiento de requerimientos con clientes.</li>
+          <li>Supervice las peticiones del cliente en reuniones para que se plasmara el requerimiento real en el desarrollo de sus módulos.</li>
+          <li>Participé en el análisis y levantamiento de requerimientos con historias de usuario y documentando en el Product Backlog.</li>
           <li>Di seguimiento a entregables, cambios solicitados y liberaciones a ambientes productivos.</li>
-          <li>Colaboré en el mantenimiento y desarrollo de módulos para aplicaciones web.</li>
-          <li>Participé en reuniones de seguimiento y coordinación con equipos de trabajo.</li>
+          <li>Participé en reuniones daily sprint con los equipos de trabajo para revisar avances, llevar nota de lo que se hizo y no se hizo, y detectar los obstaculos que hubieron.</li>
+          <li>Documente algunos procesos de trabajo y desarrollo para la compresion y entendimiento del sistema (Manuales de usuario y tecnico)</li>
         </ul>
       </div>
     </section>
 
     <section>
-      <h2>Tecnologías, lenguajes y herramientas que he manejado</h2>
-      <div class="tags">
-        <span class="tag">JavaScript</span>
-        <span class="tag">PHP</span>
-        <span class="tag">Python</span>
-        <span class="tag">Java</span>
-        <span class="tag">C++</span>
-        <span class="tag">Laravel</span>
-        <span class="tag">Node.js</span>
-        <span class="tag">React</span>
-        <span class="tag">Django</span>
-        <span class="tag">PostgreSQL</span>
-        <span class="tag">Shopify / Liquid</span>
-        <span class="tag">Firebase</span>
-        <span class="tag">SCRUM</span>
-        <span class="tag">GitHub</span>
+      <h2>Formación académica</h2>
+      <div class="edu-row">
+        <div class="edu-title">Universidad Tecnológica de Nezahualcóyotl</div>
+        <div class="edu-dates">Septiembre 2020 – Septiembre 2024</div>
       </div>
+      <div class="edu-meta">Ingeniería en Desarrollo y Gestión del Software · Título en trámite</div>
+    </section>
+
+    <section>
+      <h2>Mi Stack Tecnológico - Nivel JR</h2>
+      <p class="tech-row"><b>Lenguajes:</b> JavaScript, PHP, Python, Java</p>
+      <p class="tech-row"><b>Frameworks / librerías:</b> Laravel, Node.js, Express, React, Django, Boostrap</p>
+      <p class="tech-row"><b>Bases de datos:</b> PostgreSQL, MySQL, Microsoft Access, Firebase</p>
+      <p class="tech-row"><b>APIs y herramientas:</b> API REST, Postman, Auth/tokens, Hash, Jira, Jenkins, MVC, Shopify/Liquid</p>
+      <p class="tech-row"><b>Metodologías y control de versiones:</b> SCRUM, Kanban, GitHub, GitLab</p>
     </section>
 
     <section>
       <h2>Certificaciones</h2>
       <ul>
-        <li>(AWS) Fundamentals of Machine Learning and Artificial Intelligence.</li>
+        <li>AWS — Fundamentals of Machine Learning and Artificial Intelligence</li>
+        <li>Santander - Python</li>
       </ul>
     </section>
 
     <section>
       <h2>Competencias y habilidades</h2>
       <ul>
-        <li>Trabajo en equipo y comunicación efectiva.</li>
-        <li>Aprendizaje constante y adaptación rápida.</li>
-        <li>Conocimiento en equipos de cómputo y telemática.</li>
-        <li>Trabajo bajo presión para cumplir los plazos establecidos.</li>
+        <li>Resolución de problemas y aprendizaje autónomo</li>
+        <li>Trabajo en equipo y buena comunicación</li>
+        <li>Adaptación rápida a nuevas tecnologías y procesos empresariales</li>
+        <li>Trabajo bajo presión para cumplir plazos establecidos</li>
+        <li>Buena actitud, amable y positivo ante la frustración</li>
       </ul>
     </section>
 
     <section>
       <h2>Idiomas</h2>
-      <p>Inglés — Intermedio, con capacidad de lectura y escritura. / Español - Nativo</p>
+      <p>Español — Nativo &nbsp;|&nbsp; Inglés — Intermedio (lectura y escritura)</p>
     </section>
 
     <footer>
-      Última actualización: Agosto de 2026
+      Última actualización: Septiembre de 2026
     </footer>
   </div>
 
